@@ -12,7 +12,7 @@
 </head>
 
 <body>
- <div class="navbar-wagon">
+ <div class="navbar-wagon navbar-fixed-top">
   <!-- Logo -->
   <a href="/" class="navbar-wagon-brand">
     <h3>Mister Mixology</h3>
@@ -53,8 +53,11 @@
     </div>
   </div>
 </div>
-  <%= yield %>
-  <%= javascript_include_tag "application" %>
-  <%= javascript_pack_tag "application" %>
+
+<%= yield %>
+
+<%= javascript_include_tag "application" %>
+<%= javascript_pack_tag "application" %>
+
 </body>
 </html>

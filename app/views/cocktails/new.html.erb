@@ -1,6 +1,9 @@
-<h1>Create A New Cocktail!</h1>
 
+<div class="container nav-offset">
+<div class="new-dose-form"><br>
+  <%= render 'form', cocktail: @cocktail %>
 
-<%= render 'form', cocktail: @cocktail %>
+<%= link_to "Return to Cocktail Index", cocktails_path, :class => "btn mm-button new-cocktail-back-position"  %>
+  </div>
 
-<button class="btn"><%= link_to "Return to Cocktail Index", cocktails_path  %></button>
+</div>

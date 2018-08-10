@@ -1,30 +1,79 @@
-<h1>Welcome to the Mother Fucking Show!</h1>
+
+<div class="container nav-offset">
+
+<div class="row">
+<div class="col-xs-12 col-lg-6">
+  <div class="photo">
+    <%= cl_image_tag @cocktail.photo,
+    height: 300,
+    width: 350,
+    crop: :fill,
+    :class => "show-photo" %>
+  </div>
+</div>
 
 
-<ul>
-  <%= @cocktail.name %>
-  <% @cocktail.doses.each do |dose| %>
-<li><%= dose.ingredient.name %>,
-  <%= dose.description %>
-    <%= link_to "Delete", dose_path(dose),
-      method: :delete,
-      data: { confirm: "Are you sure?" } %>
+<div class="col-xs-12 col-lg-6">
+  <div class="drink-details">
+    <br>
+    <li><h1><%= @cocktail.name %></h1></li>
+    <br>
+    <ul>
+      <% @cocktail.doses.each do |dose| %>
+      <li><%= dose.ingredient.name %>,
+        <%= dose.description %>
+        <%= link_to "Remove", dose_path(dose),
+        method: :delete,
+        data: { confirm: "Are you sure?" },
+        :class => "delete-button"  %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
 
-  </li>
-  <% end %>
+<div class="col-xs-12">
+  <div class="drink-description">
+    <p>
+      <br>
+      <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus velit maxime debitis optio sunt inventore labore esse. Debitis molestiae velit ducimus temporibus ratione accusamus unde voluptatibus sit sequi veniam. Dolorem!
+      </span>
+      <br>
+      <br>
+      <span>Ut sapiente nesciunt, quidem sunt! Nostrum consequatur earum delectus aliquam, mollitia quibusdam veniam, dignissimos molestiae eum non vel. Expedita mollitia id eius consequatur eaque porro dignissimos sed similique cumque commodi?
+      </span>
+      <br>
+      <br>
+      <span>Similique animi aperiam, magni nulla laudantium inventore iusto deserunt qui, nam culpa, voluptate quisquam aspernatur, officia consequatur quam ipsum. Expedita aspernatur esse blanditiis doloribus nesciunt quisquam minus explicabo tenetur nobis.
+      </span>
+      <br>
+      <br>
+      <span>Reprehenderit consequatur deserunt, optio commodi magni, sit amet voluptatibus quae distinctio quo, doloribus hic minus. Vero, fugit et deserunt. Quod sint harum hic ducimus accusamus, dolore nobis reprehenderit repellendus accusantium.
+      </span></p>
+    </div>
+</div>
+
+<div class="col-xs-12 col-md-4">
+  <div class="show-options">
+   <%= link_to "Home", cocktails_path, :class => "btn mm-button" %>
+     </div>
+</div>
+<div class="col-xs-12 col-md-4">
+  <div class="show-options">
+
+   <%= link_to "Add New Ingredient", new_cocktail_dose_path(@cocktail), :class => "btn mm-button"  %>
+     </div>
+</div>
+<div class="col-xs-12 col-md-4">
+  <div class="show-options">
+   <%= link_to "Remove Cocktail", cocktail_path,
+   method: :delete,
+   data: { confirm: "Are you sure?" },
+   :class => "btn mm-button" %>
+     </div>
+</div>
+
+</div>
+ </div>
 
 
-</ul>
-
-
-
-
-<button class="btn"><%= link_to "Return to Cocktail Index", cocktails_path  %></button>
-<button class="btn"><%= link_to "Add New Ingredient/Dose", new_cocktail_dose_path(@cocktail)  %></button>
-
-
-<button class="btn">
-  <%= link_to "Delete", cocktail_path,
-      method: :delete,
-      data: { confirm: "Are you sure?" } %>
-</button>
