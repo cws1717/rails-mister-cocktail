@@ -3,16 +3,17 @@ body {
 }
 
 ul {
-  line-height: 40px;
+  line-height: 20px;
 }
 
 li {
   list-style-type: none;
+  margin-left: 40px;
 }
 
 .container {
   width: 92%;
-  background: rgb(249,249,249);
+  background: rgb(244,244,244);
   margin-top: -80px;
 }
 
@@ -81,8 +82,8 @@ li {
 
 .new-cocktail-back-position {
   position: fixed;
-  left: 1295px;
-  bottom: 660px;
+  left: 1260px;
+  bottom: 690px;
 }
 
 @media(max-width: 768px) {
