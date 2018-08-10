@@ -9,15 +9,17 @@ require 'open-uri'
 require 'json'
 
 # import cocktail ingredients
-url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
-word_serialized = URI.parse(url).read
-word = JSON.parse(word_serialized)
+# url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
+# word_serialized = URI.parse(url).read
+# word = JSON.parse(word_serialized)
 
-ingredients = word['drinks']
+# ingredients = word['drinks']
 
-ingredients.each do |ingredient|
-  Ingredient.create(name: ingredient["strIngredient1"])
-end
+# ingredients.each do |ingredient|
+#   Ingredient.create(name: ingredient["strIngredient1"])
+# end
+
+Cocktail.destroy_all
 
 
 # create cocktails
