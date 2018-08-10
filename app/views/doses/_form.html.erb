@@ -1,0 +1,22 @@
+
+<!-- [...] all the fields -->
+
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+<% if @dose.errors.any? %>
+<div class="errors-container">
+  <ul>
+    <% @dose.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<div class="form-group">
+  <%= f.association :ingredient, collection: Ingredient.order('name'), class: 'form-control' %>
+  <%= f.label "Dosage" %>
+  <%= f.text_field :description, class: 'form-control' %>
+
+</div>
+
+<%= f.submit class: 'btn btn-primary' %>
+<% end %>
