@@ -27,6 +27,11 @@ class CocktailsController < ApplicationController
   def update
   end
 
+  def destroy
+    @cocktail.destroy
+    redirect_to cocktails_path
+  end
+
   private
 
   def set_cocktail
